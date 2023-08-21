@@ -1,12 +1,12 @@
 {
   "name": "@loft-orbital/terraform",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "src/index.js",
   "generators": "./generators.json",
   "executors": "./executors.json",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nrwl/nx.git",
+    "url": "https://github.com/loft-orbital/nx-plugins.git",
     "directory": "packages/terraform"
   },
   "peerDependencies": {
