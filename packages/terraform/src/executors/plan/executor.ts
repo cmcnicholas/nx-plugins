@@ -18,7 +18,7 @@ function toCmdOptions(options: PlanExecutorSchema ): string[] {
     ...(options.var !== undefined ? Object.entries(options.var).map(([k,v]) => `-var='${k}=${v}'`) : []),
     ...(options.varFile !== undefined ? [`-var-file=${options.varFile}`] : []),
     ...(options.compactWarnings !== undefined ? ['-compact-warnings}'] : []),
-    ...(options.detailedExitCode !== undefined ? ['-detailde-exitcode'] : []),
+    ...(options.detailedExitCode !== undefined ? ['-detailed-exitcode'] : []),
     ...(options.json!== undefined ? ['-json'] : []),
     ...(options.lock !== undefined ? [`-lock=${options.lock}`] : []),
     ...(options.lockTimeout !== undefined ? [`-lock-timeout=${options.lockTimeout}`] : []), 
