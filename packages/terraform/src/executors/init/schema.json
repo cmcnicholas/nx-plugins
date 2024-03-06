@@ -5,6 +5,13 @@
   "title": "Init executor",
   "description": "",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "allowedExitCodes": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    }
+  },
   "required": []
 }

@@ -7,7 +7,7 @@ export default async function runExecutor(
   context: ExecutorContext,
 ) {
   const cmdopt = ["-input=false", ...toCmdOptions(options)]
-  return runTfCommand(context, "init", cmdopt)
+  return runTfCommand(context, "init", cmdopt, options.allowedExitCodes)
 }
 
 function toCmdOptions(options: InitExecutorSchema ): string[] {

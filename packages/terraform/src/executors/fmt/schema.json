@@ -5,6 +5,13 @@
   "title": "Fmt executor",
   "description": "The terraform fmt executor is used to rewrite Terraform configuration files to a canonical format and style.",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "allowedExitCodes": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    }
+  },
   "required": []
 }

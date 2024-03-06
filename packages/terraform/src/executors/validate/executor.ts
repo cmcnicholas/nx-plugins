@@ -7,7 +7,7 @@ export default async function runExecutor(
   context: ExecutorContext,
 ) {
   const cmdopt = toCmdOptions(options)
-  return runTfCommand(context, "validate", cmdopt)
+  return runTfCommand(context, "validate", cmdopt, options.allowedExitCodes)
 }
 
 function toCmdOptions(options: ValidateExecutorSchema): string[] {

@@ -6,4 +6,5 @@ export interface ApplyExecutorSchema {
   lockTimeout?: string
   noColor?: boolean
   parallelism?: number
+  allowedExitCodes?: number[]
 }
