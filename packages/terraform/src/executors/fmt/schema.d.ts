@@ -4,4 +4,5 @@ export interface FmtExecutorSchema {
   diff?: boolean
   check?: boolean
   recursive?: boolean
+  allowedExitCodes?: number[]
 }

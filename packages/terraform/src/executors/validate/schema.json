@@ -5,6 +5,13 @@
   "title": "Validate executor",
   "description": "Runs static checks analysis.",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "allowedExitCodes": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    }
+  },
   "required": []
 }

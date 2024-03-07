@@ -5,6 +5,13 @@
   "title": "Plan executor",
   "description": "The plan executor creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure.",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "allowedExitCodes": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    }
+  },
   "required": []
 }

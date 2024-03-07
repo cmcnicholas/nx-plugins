@@ -7,7 +7,7 @@ export default async function runExecutor(
   context: ExecutorContext,
 ) {
   const cmdopt = toCmdOptions(options)
-  return runTfCommand(context, "fmt", cmdopt)
+  return runTfCommand(context, "fmt", cmdopt, options.allowedExitCodes)
 }
 
 function toCmdOptions(options: FmtExecutorSchema): string[] {

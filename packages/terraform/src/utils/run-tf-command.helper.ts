@@ -5,6 +5,7 @@ export function runTfCommand(
   context: ExecutorContext,
   command: 'init' | 'plan' | 'fmt' | 'validate' | 'apply',
   params: string[],
+  allowedExitCodes: number[] = [0],
 ): { success: boolean } {
   const cwd = context?.projectsConfigurations?.projects[context.projectName]?.sourceRoot || process.cwd()
 
@@ -17,6 +18,8 @@ export function runTfCommand(
     return { success: true }
   } catch (e) {
     console.error(`Failed to execute command: ${execute}`, e)
-    return { success: false }
+    // we can access error code as the error object will contain entire object from:
+    // https://nodejs.org/api/child_process.html#child_processspawnsynccommand-args-options
+    return { success: allowedExitCodes.includes(e.status) }
   }
 }

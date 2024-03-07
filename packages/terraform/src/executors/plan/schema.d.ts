@@ -12,4 +12,5 @@ export interface PlanExecutorSchema {
   noColor?: boolean
   out?: string
   parallelism?: number
+  allowedExitCodes?: number[]
 }
