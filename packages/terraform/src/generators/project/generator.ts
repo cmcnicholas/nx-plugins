@@ -56,7 +56,7 @@ export default async function (tree: Tree, options: ProjectGeneratorSchema) {
       namedInputs: {
         tfSource: ["{projectRoot}/src/*.tf"],
         tfWD: ["{projectRoot}/src/.terraform"],
-        tfPlan: ["{projectRoot}/src/tfplan"] 
+        tfPlan: ["{projectRoot}/src/tfplan"]
       },
       targetDefaults: {
         initialize: {
@@ -82,7 +82,7 @@ export default async function (tree: Tree, options: ProjectGeneratorSchema) {
             cacheableOperations: ["initialize", "plan", "apply"]
           }
         }
-      }    
+      }
     }
   )
   addProjectConfiguration(
@@ -94,14 +94,14 @@ export default async function (tree: Tree, options: ProjectGeneratorSchema) {
       sourceRoot: `${normalizedOptions.projectRoot}/src`,
       targets: {
         initialize: {
-          executor: "@loft-orbital/terraform:init",
+          executor: "@fungus1487/terraform:init",
           outputs: [
             "{projectRoot}/src/.terraform",
             "{projectRoot}/src/.terraform.lock.hcl"
           ]
         },
         plan: {
-          executor: "@loft-orbital/terraform:plan",
+          executor: "@fungus1487/terraform:plan",
           options: {
             out: "tfplan"
           },
@@ -111,22 +111,22 @@ export default async function (tree: Tree, options: ProjectGeneratorSchema) {
           dependsOn: ["initialize"]
         },
         lint: {
-          executor: "@loft-orbital/terraform:fmt",
+          executor: "@fungus1487/terraform:fmt",
           options: {
             check: true
           }
         },
         validate: {
-          executor: "@loft-orbital/terraform:validate",
+          executor: "@fungus1487/terraform:validate",
           dependsOn: ["initialize"]
         },
         apply: {
-          executor: "@loft-orbital/terraform:apply",
+          executor: "@fungus1487/terraform:apply",
           options: {
             planFile: "tfplan"
           },
           dependsOn: ["plan"]
-        }     
+        }
       },
       tags: normalizedOptions.parsedTags,
     }

@@ -21,7 +21,7 @@ function toCmdOptions(options: PlanExecutorSchema ): string[] {
     ...(options.detailedExitCode !== undefined ? ['-detailed-exitcode'] : []),
     ...(options.json!== undefined ? ['-json'] : []),
     ...(options.lock !== undefined ? [`-lock=${options.lock}`] : []),
-    ...(options.lockTimeout !== undefined ? [`-lock-timeout=${options.lockTimeout}`] : []), 
+    ...(options.lockTimeout !== undefined ? [`-lock-timeout=${options.lockTimeout}`] : []),
     ...(options.noColor !== undefined ? ['-no-color'] : []),
     ...(options.out !== undefined ? [`-out=${options.out}`] : []),
     ...(options.parallelism !== undefined ? [`-parallelism=${options.parallelism}`] : []),

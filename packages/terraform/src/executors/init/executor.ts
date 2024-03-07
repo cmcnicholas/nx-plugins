@@ -13,8 +13,8 @@ export default async function runExecutor(
 function toCmdOptions(options: InitExecutorSchema ): string[] {
   return [
     ...(options.lock !== undefined ? [`-lock=${options.lock}`]: []),
-    ...(options.lockTimeout !== undefined ? [`-lock-timeout=${options.lockTimeout}`]: []), 
-    ...(options.upgrade !== undefined ? [`-upgrade=${options.upgrade}`]: []), 
+    ...(options.lockTimeout !== undefined ? [`-lock-timeout=${options.lockTimeout}`]: []),
+    ...(options.upgrade !== undefined ? [`-upgrade=${options.upgrade}`]: []),
   ]
 }
 

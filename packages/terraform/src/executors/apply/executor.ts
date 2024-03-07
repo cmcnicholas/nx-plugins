@@ -15,7 +15,7 @@ function toCmdOptions(options: ApplyExecutorSchema): string[] {
     ...(options.compactWarnings !== undefined ? ['-compact-warnings}'] : []),
     ...(options.json!== undefined ? ['-json'] : []),
     ...(options.lock !== undefined ? [`-lock=${options.lock}`]: []),
-    ...(options.lockTimeout !== undefined ? [`-lock-timeout=${options.lockTimeout}`] : []), 
+    ...(options.lockTimeout !== undefined ? [`-lock-timeout=${options.lockTimeout}`] : []),
     ...(options.noColor !== undefined ? ['-no-color'] : []),
     ...(options.parallelism !== undefined ? [`-parallelism=${options.parallelism}`] : []),
     ...(options.planFile !== undefined ? [`${options.planFile}`] : []),

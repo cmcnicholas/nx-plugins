@@ -13,9 +13,9 @@ export default async function runExecutor(
 function toCmdOptions(options: FmtExecutorSchema): string[] {
   return [
     ...(options.list !== undefined ? [`-list=${options.list}`]: []),
-    ...(options.write !== undefined ? [`-write=${options.write}`]: []), 
-    ...(options.diff ? [`-diff`]: []), 
-    ...(options.check ? [`-check`]: []), 
-    ...(options.recursive ? [`-recursive`]: []), 
+    ...(options.write !== undefined ? [`-write=${options.write}`]: []),
+    ...(options.diff ? [`-diff`]: []),
+    ...(options.check ? [`-check`]: []),
+    ...(options.recursive ? [`-recursive`]: []),
   ]
 }

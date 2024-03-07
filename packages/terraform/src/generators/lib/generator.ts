@@ -56,7 +56,7 @@ export default async function (tree: Tree, options: LibGeneratorSchema) {
       namedInputs: {
         tfSource: ["{projectRoot}/src/*.tf"],
         tfWD: ["{projectRoot}/src/.terraform"],
-        tfPlan: ["{projectRoot}/src/tfplan"] 
+        tfPlan: ["{projectRoot}/src/tfplan"]
       },
       targetDefaults: {
         initialize: {
@@ -76,7 +76,7 @@ export default async function (tree: Tree, options: LibGeneratorSchema) {
             cacheableOperations: ["initialize"]
           }
         }
-      }    
+      }
     }
   )
   addProjectConfiguration(
@@ -88,20 +88,20 @@ export default async function (tree: Tree, options: LibGeneratorSchema) {
       sourceRoot: `${normalizedOptions.projectRoot}/src`,
       targets: {
         initialize: {
-          executor: "@loft-orbital/terraform:init",
+          executor: "@fungus1487/terraform:init",
           outputs: [
             "{projectRoot}/src/.terraform",
             "{projectRoot}/src/.terraform.lock.hcl"
           ]
         },
         lint: {
-          executor: "@loft-orbital/terraform:fmt",
+          executor: "@fungus1487/terraform:fmt",
           options: {
             check: true
           }
         },
         validate: {
-          executor: "@loft-orbital/terraform:validate",
+          executor: "@fungus1487/terraform:validate",
           dependsOn: ["initialize"]
         }
       },
